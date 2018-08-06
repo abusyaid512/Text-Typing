@@ -1,1 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
 
+<style type="text/css">
+* {
+margin: 0px;
+padding: 0px;
+}
+p {
+display: none;
+font-size: 25px;
+}
+.p2 {
+display: block;
+width: 400px;
+margin: 0 auto;
+word-break: break-all;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example of Simple Text Typing Effect with jQuery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+function changeText(cont1,cont2,speed){
+	var Otext=cont1.text();
+	var Ocontent=Otext.split("");
+	var i=0;
+	function show(){
+		if(i<Ocontent.length)
+		{		
+			cont2.append(Ocontent[i]);
+			i=i+1;
+		};
+	};
+		var Otimer=setInterval(show,speed);	
+};
+$(document).ready(function(){
+	changeText($(".pc"),$(".p2"),150);
+	clearInterval(Otimer);
+});
+</script>
+</head>
+
+<body>
+
+<p class="pc">jQueryScript.Net is one of the BEST jQuery websites that provide web designers and developers with a simple way to preview and download a variety of Free jQuery Plugins.</p>
+<p class="p2"></p>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
