@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html>
+<head>
+
+<title>t.js/demo.htm</title>
+<meta charset="utf-8"/>
+<meta name="author" content="Mntn&reg; c/o Benjamin Lips"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- 3.3.1 -->
+<script src="https://rawgit.com/mntn-dev/t.js/master/t.min.js"></script> <!-- 1.1 -->
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+ $('#t').t({
+  
+  delay:2,                // start delay in seconds [default:0]
+  
+  speed:55,               // typing speed (ms) [default:75]
+  speed_vary:false,       // 'human like' speed variation [default:false]
+  
+  beep:true,              // beep while typing (Web Audio API) [default:false]
+  
+  mistype:false,          // mistype rate: 1:N per char [default:false]
+  locale:'en',            // keyboard layout (to fit mistype); supported: 'en' (english) or 'de' (german) [default:'en']
+  
+  caret:'\u2589',         // caret content; can be html too [default:true (\u258e)]
+  blink:true,             // blink-interval in ms; if TRUE, speed*3  [default:true]
+  blink_perm:false,       // permanent blinking? if FALSE, caret blinks only on delay/pause/finish [default:false]
+
+  repeat:0,               // repeat typing: if TRUE, infinite or N times [default:0]
+  tag:'span',             // wrapper tag (.t-container, .t-caret) [default:'span']
+  pause_on_click:true,    // pauses/continues typing on click/tap (elm) [default:false]
+
+  
+  // init callback (ready-to-type)
+  init:function(elm){},        
+  // typing callback
+  typing:function(elm,chr_or_elem,left,total){},
+  // finished callback
+  fin:function(elm){}          
+ 
+ });
+});
+
+//]]>
+</script>
+
+
+</head>
+
+
+<body>
+
+
+<div id="t"><strong>Yay.</strong> <img style="height:1.5vw;width:auto;" src="https://twemoji.maxcdn.com/2/72x72/1f44b.png" alt=""/>
+~~~~~~~~
+<ins>1.5</ins>I'm <em><del>r.j<ins>1</ins></del>t.js</em>, a <kbd>lightweight</kbd> jQuery typewriter script.
+I provide full <strong><u title="Hypertext Markup Language">HTML</u> tag</strong> support, also i can:<ins>1</ins>
+<ins><span class="g">*</span> mistype (<code>&lt;kbd&gt;</code>)</ins><ins>.5</ins>
+<ins><span class="g">*</span> delete (<code>&lt;del&gt;</code>)</ins><ins>.5</ins>
+<ins><span class="g">*</span> delay (numeric <code>&lt;ins&gt;</code>)</ins><ins>.5</ins>
+<ins><span class="g">*</span> insert (non-numeric <code>&lt;ins&gt;</code>)</ins><ins>.5</ins>
+
+<a target="_blank" href="https://mntn-dev.github.io/t.js">Learn more</a>.
+
+<ins>5</ins>(Open console:<br/><span style="border-bottom:1px dashed magenta;">$('#t').a('&lt;hr/&gt;foo&lt;hr/&gt;moo');</span> )
+
+</div>
+
+<br/>
+
+
+</body>
+
+</html>
